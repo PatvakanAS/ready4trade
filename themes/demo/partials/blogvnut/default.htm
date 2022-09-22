@@ -1,0 +1,37 @@
+description = "Шаблон внутренних новостных страниц"
+==
+{% set post = __SELF__.post %}
+<div class="vnutstran blogvnut">
+    <div class="container">
+        <div class="flexjust flexwrap flexcent flexdp">
+            <p class="publicat newpublicat">
+                {{ 'Published'|_ }}:
+                {% if post.categories.count %}
+                {% for category in post.categories %}
+                {% if not loop.last %}, {% endif %}
+                {% endfor %}
+                {% endif %}
+                <time itemprop="datePublished" datetime="{{ post.published_at|date('d/m/Y') }}">{{
+                    post.published_at|date('d/m/Y') }}
+                </time>
+            </p>
+            <div class="podeliss">
+                <script src="https://yastatic.net/share2/share.js"></script>
+                <div class="ya-share2" data-curtain data-shape="round" data-limit="0" data-more-button-type="short"
+                     data-services="facebook,telegram,whatsapp,twitter,linkedin"></div>
+            </div>
+        </div>
+        <h1 class="zaglov">{{ post.title }}</h1>
+        {% for image in post.featured_images %}
+                    <img class="posts_featcherd_img"  
+                            data-src="{{ image.filename }}"
+                            src="{{image.getThumb(1280, 720, {'mode': 'crop', 'quality': 100, 'extension': 'jpg'}) }}"
+                            alt="{{ image.description }}"
+                            style="max-width: 100%"/>
+                    {% endfor %}
+        <div class="news_image_container">
+            {{ post.content_html|raw }}
+        </div>
+    </div>
+</div>
+<div style="clear:both"></div>

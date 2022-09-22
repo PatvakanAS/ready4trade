@@ -1,0 +1,27 @@
+description = "Меню основное"
+==
+<ul class="flexjust flexosnovmenu">
+    <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">{{ 'Home'|_ }}</a></li>
+    <li class="{% if this.page.id == 'about' %}active{% endif %}"><a href="{{ 'about'|page }}">{{ 'About'|_ }}</a></li>
+    <li class="{% if this.page.id == 'hww' %}active{% endif %}"><a href="{{ 'hww'|page }}">{{ 'How we work'|_ }}</a></li>
+    <li class="podmenu {% if this.page.id == 'Kazakhstan' %}active{% endif %}"><a href="{{ 'Kazakhstan'|page }}">{{ 'Сountries'|_ }}</a>
+    <ul class="hiddenmenu">
+            <li><a href="{{ 'Kazakhstan'|page}}">{{ 'Kazakhstan'|_ }}</a></li>
+            <li><a href="{{ 'Kyrgyzstan'|page}}">{{ 'Kyrgyzstan'|_ }}</a></li>
+            <li><a href="{{ 'Tajikistan'|page}}">{{ 'Tajikistan'|_ }}</a></li>
+            <li><a href="{{ 'Turkmenistan'|page}}">{{ 'Turkmenistan'|_ }}</a></li>
+            <li><a href="{{ 'Uzbekistan'|page}}">{{ 'Uzbekistan'|_ }}</a></li>
+        </ul>
+    </li>
+    <li class="podmenu {% if this.page.id == 'news' %}active{% endif %}"><a href="{{ 'news'|page }}">{{ 'Media'|_ }}</a>
+    <ul class="hiddenmenu">
+            <li><a href="{{ 'news'|page}}">{{ 'News'|_ }}</a></li>
+            <li><a href="{{ 'sucess-stories'|page}}">{{ 'Success stories'|_ }}</a></li>
+            <li><a href="{{ 'newsletters'|page}}">{{ 'Newsletters'|_ }}</a></li>
+            <li><a href="{{ 'inphographics'|page}}">{{ 'Infographics'|_ }}</a></li>
+            <li><a href="{{ 'videos'|page}}">{{ 'Videos'|_ }}</a></li>
+        </ul>
+    </li>
+    <li class="{% if this.page.id == 'contact' %}active{% endif %}"><a href="{{ 'contact'|page }}">{{ 'Contact'|_ }}</a></li>
+
+</ul>

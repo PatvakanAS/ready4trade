@@ -1,0 +1,30 @@
+description = "News Country"
+==
+{% set posts = __SELF__.posts %}
+<div class="newscatprev">
+	{% for post in posts %}
+	{% if post.user.login==this.page.id %}
+		<div class="newscatblock">
+		    {% if(post.featured_images.count) %}
+	        {% for image in post.featured_images %}
+	            <img
+	                data-src="{{ image.filename }}"
+	                src="{{image.getThumb(708, 462, {'mode': 'crop', 'quality': 100, 'extension': 'jpg'}) }}"
+	                alt="{{ image.description }}"
+	                style="max-width: 100%" />
+            {% endfor %}
+	        {% else %}
+                <img src="/storage/app/media/noimage.svg">
+            {% endif %}
+	        <div class="newscatinfo">
+	            <div class="newscatatr flexjust flexwrap flexcent">
+    				<p class="ncdate">{{ post.published_at|date('d.m.Y') }}</p>
+                    <p class="newcatattr {{ post.user.login }}">{{ post.user.login|_ }}</p>
+	            </div>
+		         <a class="ncname" href="{{ post.url }}">{{ post.title }}</a>
+		         <div class="ncdescr">{{ post.summary|raw }}</div>
+	        </div>
+	    </div>
+    	{% endif %}
+	{% endfor %}
+</div>

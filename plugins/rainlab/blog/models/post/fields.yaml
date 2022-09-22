@@ -1,0 +1,128 @@
+fields:
+    title:
+        label: 'rainlab.blog::lang.post.title'
+        span: left
+        placeholder: 'rainlab.blog::lang.post.title_placeholder'
+        type: text
+    slug:
+        label: 'rainlab.blog::lang.post.slug'
+        span: right
+        placeholder: 'rainlab.blog::lang.post.slug_placeholder'
+        preset:
+            field: title
+            type: slug
+        type: text
+    toolbar:
+        type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
+secondaryTabs:
+    fields:
+        content:
+            tab: 'rainlab.blog::lang.post.tab_edit'
+            type: RainLab\Blog\FormWidgets\BlogMarkdown
+            cssClass: 'field-slim blog-post-preview'
+            stretch: true
+            mode: split
+        categories:
+            tab: 'rainlab.blog::lang.post.tab_categories'
+            type: relation
+            commentAbove: 'rainlab.blog::lang.post.categories_comment'
+            placeholder: 'rainlab.blog::lang.post.categories_placeholder'
+        published:
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.published'
+            span: left
+            type: checkbox
+        user:
+            label: 'rainlab.blog::lang.post.published_by'
+            emptyOption: 'rainlab.blog::lang.post.current_user'
+            showSearch: true
+            span: right
+            type: dropdown
+            tab: 'rainlab.blog::lang.post.tab_manage'
+        published_at:
+            label: 'rainlab.blog::lang.post.published_on'
+            mode: datetime
+            span: left
+            cssClass: checkbox-align
+            trigger:
+                action: enable
+                field: published
+                condition: checked
+            type: datepicker
+            tab: 'rainlab.blog::lang.post.tab_manage'
+        published_off:
+            label: 'End publish'
+            mode: datetime
+            span: auto
+            type: datepicker
+            tab: 'rainlab.blog::lang.post.tab_manage'
+        excerpt:
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.excerpt'
+            type: textarea
+            size: small
+        featured_images:
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.featured_images'
+            type: fileupload
+            mode: image
+            imageWidth: 200
+            imageHeight: 200
+        atribute1:
+            label: 'Attribute 1'
+            span: auto
+            type: text
+            tab: Attributes
+        mwa:
+            label: 'Main working area'
+            span: auto
+            showSearch: false
+            type: dropdown
+            tab: Attributes
+            placeholder: -- select a mwa --
+            options:
+                establishing_trade_facilitation_portals: Establishing Trade Facilitation Portals
+                addressing_obstacles_to_trade: Addressing obstacles to trade
+                helping_sme: Helping SMEs comply with cross-border requirements
+                supporting_women: Supporting women in trade
+                supporting_sme: Supporting SMEs’ engagement in e-commerce
+                developing_e_commerce: Developing E-commerce Strategies and e-commerce legislation
+        zagolovok:
+            label: Title
+            span: auto
+            type: text
+            tab: 'Upcoming Events'
+        date2:
+            label: 'Event date'
+            span: auto
+            type: text
+            tab: 'Upcoming Events'
+        engfile:
+            label: 'English file'
+            mode: file
+            span: auto
+            type: mediafinder
+            tab: Newsletters
+        rusfile:
+            label: 'Russian file'
+            mode: file
+            span: auto
+            type: mediafinder
+            tab: Newsletters
+        ssname:
+            label: Name
+            span: auto
+            type: text
+            tab: 'Success Stories / Team'
+        sspole:
+            label: Position
+            span: auto
+            type: text
+            tab: 'Success Stories / Team'
+        show_at_home:
+            label: Display at home
+            type: checkbox
+            default: false
+            tab: 'Success Stories / Team'

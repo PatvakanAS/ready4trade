@@ -1,0 +1,53 @@
+description = "Шаблон внутренних страниц"
+
+[breadcrumbs]
+main-ol-class = "breadcrumb"
+active-class = "active"
+disabled-class = "disabled"
+
+[localePicker]
+forceUrl = 1
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ this.page.meta_title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+		<link rel="canonical" href="https://oon.kz{{ this.page.url }}">
+	    <meta name="og:title" content="{{ this.page.meta_title }}">
+ 	    <meta name="og:description" content="{{ this.page.meta_description }}">
+ 	    <meta property="og:image" content="/storage/app/media/logoog.jpg" />
+        <meta name="author" content="Tima">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content="Tima">
+        <link rel="icon" type="/storage/app/media/png" href="{{ '/storage/app/media/favicon.png' }}">
+        {% partial 'site/analytics' %}
+        <script src="{{ 'assets/javascript/build.js'|theme }}"></script>
+        <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet preload">
+        <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet preload">
+        <link href="{{ 'assets/css/media.css'|theme }}" rel="stylesheet preload">
+        {% styles %}
+    </head>
+    <body>
+        <!-- Header -->
+        <div class="boxshadow">
+            {% partial 'site/header' %}
+        </div>
+        
+        <!-- Content -->
+     	 <div class="nommenu">
+     	     <div class="container">
+<!--     	         {% component 'breadcrumbs' %}-->
+     	         {% page %}
+ 	         </div>
+            <!-- Footer -->
+            {% partial 'site/footer' %}
+     	 </div>
+        <!-- Scripts -->
+        <script src="{{ 'assets/javascript/script.js'|theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+    </body>
+</html>

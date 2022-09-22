@@ -1,0 +1,28 @@
+description = "Newsletters"
+==
+{% set posts = __SELF__.posts %}
+<div class="newsletters ">
+    {% for country in ['Kazakhstan', 'Kyrgyzstan', 'Tajikistan', 'Turkmenistan', 'Uzbekistan'] %}
+        
+  <?php 
+
+    ?>
+    <p><b>{{ country }}</b></p>
+    <div class="newslettersblock">
+        {% for post in posts %}
+        {% if country in post.user.login|raw %}
+        <div class="newslet">
+            <div class="newsletzaglov">
+                <P>{{post.title}}</P>
+                <span>{{ post.excerpt|raw }}</span>
+            </div>
+            <div class="flexdis flexwrap flexcent flexfilnewslet">
+                <a target="_blank" href="{{ post.engfile|media }}">{% partial 'svg/filles' %}{{ 'English'|_ }}</a>
+                <a target="_blank" href="{{ post.rusfile|media }}">{% partial 'svg/filles' %}{{ 'Russian'|_ }}</a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,47 @@
+description = "Шаблон новости"
+
+[localePicker]
+forceUrl = 0
+
+[SeoCmsPage]
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% component 'SeoCmsPage' %}
+ 	    <meta property="og:image" content="/storage/app/media/logoprev.jpg" />
+        <meta name="author" content="Tima">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content="Tima">
+        <link rel="icon" type="/storage/app/media/jpg" href="{{ '/storage/app/media/favicon.png' }}">
+        {% styles %}
+        <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet preload">
+        <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet preload">
+        <link href="{{ 'assets/css/media.css'|theme }}" rel="stylesheet preload">
+    </head>
+    <body>
+
+        <!-- Header -->
+        <div class="boxshadow">
+            {% partial 'site/header' %}
+        </div>
+        <div class="bbblog">
+            <div class="container">
+                {% component 'PostBreadCrumbs' %}
+            </div>
+        </div>
+        <!-- Content -->
+        {% page %}
+
+        <!-- Footer -->
+        {% partial 'site/footer' %}
+
+        <!-- Scripts -->
+        <script src="{{ 'assets/javascript/build.js'|theme }}"></script>
+        <script src="{{ 'assets/javascript/script.js'|theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+
+    </body>
+</html>

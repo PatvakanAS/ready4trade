@@ -1,0 +1,25 @@
+description = "Team"
+==
+{% set posts = __SELF__.posts %}
+<div class="team">
+	{% for post in posts %}
+    	{% if post.user.login==this.page.id %}
+            <div class="teamblock flexdis">
+                {% for image in post.featured_images %}
+    	            <img
+    	                data-src="{{ image.filename }}"
+    	                src="{{image.getThumb(383, 300, {'mode': 'crop', 'quality': 100, 'extension': 'jpg'}) }}"
+    	                alt="{{ image.description }}"
+    	                />
+                {% endfor %}
+                <div class="teaminfo">
+                    <p>{{ post.ssname }}</p>
+                    <span>{{ post.sspole }}</span>
+                    <div class="descrteam">
+<!--                        {{ post.excerpt|raw }}-->
+                    </div>
+                </div>
+            </div>
+    	{% endif %}
+    {% endfor %}
+</div>

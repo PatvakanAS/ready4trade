@@ -1,0 +1,6 @@
+plugin:
+    name: 'alimbekoff.hww::lang.plugin.name'
+    description: 'alimbekoff.hww::lang.plugin.description'
+    author: 'Timur Alimbekov'
+    icon: oc-icon-adjust
+    homepage: ''

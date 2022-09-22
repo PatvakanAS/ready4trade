@@ -1,0 +1,59 @@
+description = "Шаблон блога категорий"
+==
+
+{% set posts = __SELF__.posts %}
+<div class="news container">
+ <ul  class="">
+	{% for post in posts %}
+	<li>
+		<div class="newsblock flexjust flexwrap flexcent" data-keywords="{{post.mwa}}">
+		    <div class="newsimg">
+         
+        	    {% if(post.featured_images.count) %}
+    	        {% for image in post.featured_images %}
+    	            <img
+    	                data-src="{{ image.filename }}"
+    	                src="{{image.getThumb(385, 350, {'mode': 'crop', 'quality': 100, 'extension': 'jpg'}) }}"
+    	                alt="{{ image.description }}"
+    	                style="max-width: 100%" />
+                {% endfor %}
+    	        {% else %}
+                    <img src="/storage/app/media/noimage.svg">
+                {% endif %}
+		    </div>
+	        <div class="newsinfo">
+	            <div class="newshead flexjust flexwrap flexcent">
+		    		<p class="newsdate">{{ post.published_at|date('d-m-Y') }}</p>
+		    		<div class="newsattr"><span class="country">{{ post.user.login|_ }}</span></div>
+
+    	    		<div class="newsattr"><span>{{ post.atribute1 }}</span></div>
+                    
+	            </div>
+		         <a class="ncname" href="{{ post.url }}">{{ post.title }}</a>
+		         <div class="ncdescr">{{ post.summary|raw }}</div>
+
+		         <a href="{{ post.url }}" class="readmore littlerm">{{ 'read more'|_ }}</a>
+	        </div>
+	    </div>
+       </li>
+	{% endfor %}
+     </ul>
+</div>
+
+<!-- {% if posts.lastPage > 1 %}
+    <ul class="pagination">
+        {% if posts.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): (posts.currentPage-1) }) }}">&larr;</a></li>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+            <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): (posts.currentPage+1) }) }}">&rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %} -->

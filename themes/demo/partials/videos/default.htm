@@ -1,0 +1,22 @@
+description = "videos"
+==
+{% set posts = __SELF__.posts %}
+<div class="news pad50">
+<ul  class="pagination_block">
+    {% for post in posts %}
+    <div class="newsblock flexjust flexwrap flexcent" data-keywords="{{post.mwa}}">
+        <div class="newsimg">
+            <iframe width="100%" height="200px;" src="https://www.youtube.com/embed/{{ post.atribute1 }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="newsinfo">
+            <div class="newshead flexjust flexwrap flexcent">
+                <p class="newsdate">{{ post.published_at|date('d-m-Y') }}</p>
+                <div class="newsattr"><span class="country">{{ post.user.login|_ }}</span></div>
+            </div>
+             <b>{{ post.title }}</b>
+             <div class="ncdescr">{{ post.summary|raw }}</div>
+        </div>
+    </div>
+    {% endfor %}
+    </ul>
+</div>

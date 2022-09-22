@@ -1,0 +1,69 @@
+title = "Success stories"
+url = "/success-stories"
+layout = "vnut"
+meta_title = "Success stories"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "home"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+role = 0
+permission = 0
+anonymous_only = 0
+logged_only = 0
+
+[viewBag]
+localeTitle[ru] = "Истории успеха"
+localeMeta_title[ru] = "Истории успеха"
+
+[blogPosts succ]
+pageNumber = "{{ :page }}"
+categoryFilter = "success"
+postsPerPage = 60
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = 404
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+==
+<h2 class="zaglov bigzaglov">{{ 'Ready4Trade Success Stories'|_ }}</h2>
+<div class="imgbanervnut"><img src="/storage/app/media/sunvyn.jpg"></div>
+{% partial 'menu/media' %}
+<div class="news_filters filters_container">
+    <div>{{ 'search.by'|_ }}</div>
+    <div class="filter_label">
+        <select class="tags_select">
+            <option value="Country" style="display:none;">{{ 'Country'|_ }}</option>
+            <option value="All">{{ 'All'|_ }}</option>
+            <option value="Regional">{{ 'Regional'|_ }}</option>
+            <option value="Turkmenistan">{{ 'Turkmenistan'|_ }}</option>
+            <option value="Kazakhstan">{{ 'Kazakhstan'|_ }}</option>
+            <option value="Kyrgyzstan">{{ 'Kyrgyzstan'|_ }}</option>
+            <option value="Tajikistan">{{ 'Tajikistan'|_ }}</option>
+            <option value="Uzbekistan">{{ 'Uzbekistan'|_ }}</option>
+
+        </select>
+    </div>
+    <div class="filter_label">
+    <select class="tags_select_news_main_area">
+        <option style="display:none;" value="Working area">{{ 'Working area'|_ }}</option>
+        <option value="All">{{ 'All'|_ }}</option>
+        <option value="developing_e_commerce">{{ 'Developing e-commerce strategies'|_ }}</option>
+        <option value="supporting_sme">{{ 'Boosting SMEs’ e-commerce presence'|_ }}</option>
+        <option value="supporting_women">{{ 'Supporting women in trade'|_ }}</option>
+        <option value="helping_sme">{{ 'Helping SMEs comply with cross-border requirements'|_ }}</option>
+        <option value="addressing_obstacles_to_trade">{{ 'Addressing obstacles to trade'|_ }}</option>
+        <option value="establishing_trade_facilitation_portals">{{ 'Establishing Trade Facilitation Portals'|_ }}</option>
+    </select>
+    </div>
+</div>
+
+
+{% component 'searchInput' %}
+{% component 'succ' %}

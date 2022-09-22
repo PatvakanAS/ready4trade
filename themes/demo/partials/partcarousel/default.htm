@@ -1,0 +1,23 @@
+description = "Partners Carousel"
+==
+{% set posts = __SELF__.posts %}
+    <div class="part owl-carousel">
+    	{% for post in posts %}
+            <div class="item">
+                <div class="maxh90">
+        		    {% if(post.featured_images.count) %}
+            	        {% for image in post.featured_images %}   
+            	            <img 
+            	                data-src="{{ image.filename }}"
+            	                src="{{image.getThumb(auto, auto, {'mode': 'crop', 'quality': 100, 'extension': 'jpg'}) }}"
+            	                alt="{{ image.description }}"
+            	                style="max-width: 100%" />
+                        {% endfor %}
+            	        {% else %} 
+                        <img src="/storage/app/media/noimage.svg">
+                    {% endif %}
+                </div>
+                <p>{{ post.title }}</p>
+            </div>
+        {% endfor %}
+    </div>

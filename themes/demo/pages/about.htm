@@ -1,0 +1,113 @@
+title = "About"
+url = "/about"
+layout = "vnut"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[ru] = "О нас"
+localeMeta_title[ru] = "О нас"
+
+[blogPosts maif]
+pageNumber = "{{ :page }}"
+categoryFilter = "maw"
+postsPerPage = 12
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = 404
+
+[blogPosts partners]
+pageNumber = "{{ :page }}"
+categoryFilter = "partners"
+postsPerPage = 50
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = 404
+==
+<h2 class="zaglov bigzaglov"><span>{{ 'Ready4Trade'|_ }}</span> {{ 'Central Asia'|_ }}</h2>
+<div class="imgbanervnut"><img src="/storage/app/media/abb.jpg"></div>
+<div class="biggie">
+    <p>{{ 'Ready4Trade Central Asia is a four-year EU-funded project, which aims to promote intra-regional and
+        international trade in five Central Asian countries &ndash; Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan and
+        Uzbekistan. This will be achieved by enhancing the transparency of cross-border requirements, removing
+        regulatory and procedural barriers, strengthening business capability to comply with trade formalities and
+        standards, as well as by improving cross-border e-commerce.'|_ }}</p>
+    <p>{{ 'Ready4Trade Central Asia is the third component in the framework of a larger EU-funded programme aimed to
+        support Investment, Competitiveness and Trade in Central Asia.'|_ }}</p>
+    <p>{{ 'Although Ready4Trade Central Asia will reap synergies from regional implementation, the ensuing technical
+        interventions will respond to the individual needs and priorities of each beneficiary country.'|_ }}</p>
+    <p>{{ 'The project is implemented by the International Trade Centre in close collaboration with national
+        partners.'|_ }}</p>
+</div>
+<!--<div class="pad80">-->
+<!--    <h2 class="zaglov">{{ 'Timeline'|_ }}</h2>-->
+<!--    <p class="timel">{{ 'January 2020 - December 2023'|_ }}</p>-->
+<!--</div>-->
+<div class="pad80 timeline_container">
+    <div>
+        <h2 class="zaglov about_text_title">{{ 'Timeline'|_ }}</h2>
+        <div class="stakeblock timel_svg">
+            {% partial 'svg/calendar' %}
+        </div>
+        <p class="timel timel_text">{{ 'January 2020 - December 2023'|_ }}</p>
+    </div>
+    <div class="flexjust flexwrap flexcent fleeexst stakeholders_content">
+        <div class="zaglov wid30 about_text_title stakeholders">{{ 'Stakeholders'|_ }}</div>
+        <div class="flexjust flexwrap flexstake stakeholders_items">
+            <div class="stakeblock">
+                {% partial 'svg/stake1' %}
+                <p class="timel_text">{{ 'Governments'|_ }}</p>
+            </div>
+            <div class="stakeblock">
+                {% partial 'svg/stake2' %}
+                <p class="timel_text">{{ 'SMEs'|_ }}</p>
+            </div>
+            <div class="stakeblock">
+                {% partial 'svg/stake3' %}
+                <p class="timel_text">{{ 'BSOs'|_ }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pad80">
+    <div class="flexjust flexwrap flexcent flexpf">
+        <div class="wid48">
+            <img src="/storage/app/media/project-focus.jpg">
+        </div>
+        <div class="wid48">
+            <div class="zaglov">{{ 'Project Focus'|_ }}</div>
+            <p>{{ 'The Ready4Trade project focuses on six areas:'|_ }}</p>
+            <ul class="golubc">
+                <li><a href="/how-we-work#hww1">{{ 'Establishing Trade Facilitation Portals'|_ }}</a></li>
+                <li><a href="/how-we-work#hww2">{{ 'Addressing obstacles to trade'|_ }}</a></li>
+                <li><a href="/how-we-work#hww3">{{ 'Helping SMEs comply with cross-border requirements'|_ }}</a></li>
+                <li><a href="/how-we-work#hww4">{{ 'Supporting women in trade'|_ }}</a></li>
+                <li><a href="/how-we-work#hww5">{{ 'Boosting SMEs’ e-commerce presence'|_ }}</a></li>
+                <li><a href="/how-we-work#hww6">{{ 'Developing e-commerce strategies'|_ }}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="pad80">
+    <div class="flexjust flexwrap flexcent flethree">
+        <div class="zaglov">{{ 'The project contributes <span>to the realization of the following SDGs:</span>'|_ }}
+        </div>
+        <div class="flexjust flexwrap flextrio contributes">
+            <img src="/storage/app/media/three1.svg">
+            <img src="/storage/app/media/three2.svg">
+            <img src="/storage/app/media/three3.svg">
+        </div>
+    </div>
+</div>
+<div class="pad80">
+    <div class="flexjust flexwrap flexpart22">
+        {% component 'partners' %}
+    </div>
+</div>

@@ -1,0 +1,123 @@
+title = "Tajikistan"
+url = "/tajikistan"
+layout = "vnut"
+meta_title = "Tajikistan"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "home"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[ru] = "Таджикистан"
+localeMeta_title[ru] = "Таджикистан"
+
+[blogPosts newscountry]
+pageNumber = "{{ :page }}"
+categoryFilter = "news"
+postsPerPage = 60
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "news"
+postPage = "news-vnutrennyaya-stranica"
+
+[blogPosts newsletterscountry]
+pageNumber = "{{ :page }}"
+categoryFilter = "newsletter"
+postsPerPage = 60
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at asc"
+categoryPage = "newsletters"
+postPage = "newsletters-vnutrennyaya-stranica"
+
+[blogPosts successneowl]
+pageNumber = "{{ :page }}"
+categoryFilter = "success"
+postsPerPage = 60
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = 404
+
+[blogPosts team]
+pageNumber = "{{ :page }}"
+categoryFilter = "team"
+postsPerPage = 60
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at asc"
+categoryPage = 404
+postPage = 404
+
+[blogPosts partcountry]
+pageNumber = "{{ :page }}"
+categoryFilter = "local"
+postsPerPage = 999
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = 404
+==
+<div class="imgbanervnut imgbanercountry"><img src="/storage/app/media/tjtjtj.jpg">
+    <h1>{{ this.page.meta_title }}</h1></div>
+<div class="menuvnut menucountry">
+    <li><a href="#cf">{{ 'Country focus'|_ }}</a></li>
+    <li><a href="#news">{{ 'News'|_ }}</a></li>
+    <li><a href="#ss">{{ 'Success stories'|_ }}</a></li>
+    <li><a href="#letters">{{ 'Newsletters'|_ }}</a></li>
+    <li><a href="#graphics">{{ 'Infographics'|_ }}</a></li>
+    <li><a href="#parners">{{ 'Partners'|_ }}</a></li>
+    <li><a href="#team">{{ 'Team'|_ }}</a></li>
+</div>
+<div class="countryfocus_infographics">
+
+    <div id="cf" class="countryfocus threeline">
+        <div class="zaglov">{{ 'Country Focus'|_ }}</span></div>
+        <p>{{ 'The Ready4Trade Central Asia project contributes to the overall sustainable and inclusive economic
+            development of five Central Asian countries, including Tajikistan, by boosting intra-regional and
+            international trade in the region.'|_ }}</p>
+        <p>{{ 'In Tajikistan, the project is comprised of the following components:'|_ }}</p>
+        <ul>
+            <li>{{ 'Establishing a Trade Facilitation Portal (expanding and updating the &ldquo;<a
+                    href="https://tajtrade.tj/">Tajikistan Trade Portal</a>&rdquo; that was developed by ITC as part of
+                the Global Textiles and Clothing Programme (GTEX) funded by the State Secretariat for Economic Affairs
+                SECO)'|_ }}
+            </li>
+            <li>{{ 'Addressing obstacles to trade'|_ }}</li>
+            <li>{{ 'Helping SMEs comply with cross-border requirements'|_ }}</li>
+            <li>{{ 'Developing national E-commerce Strategy'|_ }}</li>
+            <li>{{ 'Supporting SME engagement in e-commerce'|_ }}</li>
+            <li>{{ 'Supporting women in trade'|_ }}</li>
+        </ul>
+    </div>
+    <div id="graphics" class="tajik graphics_right_block">
+        <p class="graphics_description">{{ 'Discover more about Tajikistan main working areas, key data and indicators'|_ }}</p>
+        <h2 class="zaglov">{{ 'Tajikistan Infographics'|_ }}</h2>
+        <a href="{{ 'https://prezi.com/i/view/kq7wK41vtxHaIxz6qeyg'|_ }}" target="_blank" class="readmore">{{ 'Discover'|_ }}</a>
+    </div>
+</div>
+<div id="news" class="pad80">
+    <div class="zaglov">{{ 'News'|_ }}</div>
+    {% component 'newscountry' %}
+</div>
+<div id="ss" class="pad80">
+    <div class="zaglov">{{ 'Success stories'|_ }}</div>
+    {% component 'successneowl' %}
+</div>
+<div id="letters" class="pad80">
+    <div class="zaglov">{{ 'Newsletters'|_ }}</div>
+    {% component 'newsletterscountry' %}
+</div>
+<!--<div id="graphics" class="pad80">-->
+<!--    <div class="zaglov">{{ 'Infographics'|_ }}</div>-->
+<!--    <a href="https://prezi.com/i/view/kq7wK41vtxHaIxz6qeyg" target="_blank" class="readmore">Follow the link</a>-->
+<!--</div>-->
+<div class="pad80">
+    <h2 id="parners" class="zaglov">{{ 'Partners'|_ }}</h2>
+    {% component 'partcountry' %}
+</div>
+<div id="team" class="pad80">
+    <h2 class="zaglov" style="text-align: center">{{ 'Our Team'|_ }}</h2>
+    {% component 'team' %}
+</div>

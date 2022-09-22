@@ -1,0 +1,10 @@
+*.log
+.env
+*.env
+/storage/temp/
+/storage/logs/
+/storage/cms/
+/storage/twig/
+/storage/framework/cache/
+/storage/framework/sessions/
+/storage/framework/views/

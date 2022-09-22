@@ -1,0 +1,89 @@
+title = "Home"
+url = "/"
+layout = "default"
+meta_title = "Ready4Trade Central Asia official site"
+meta_description = "Ready4Trade Central Asia is a four-year EU-funded project, which aims to promote intra-regional and international trade in five Central Asian countries – Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan and Uzbekistan."
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[ru] = "Главная"
+localeMeta_title[ru] = "Официальный сайт Ready4Trade Центральная Азия"
+localeMeta_description[ru] = "Ready4Trade Central Asia - это четырехлетний проект, финансируемый ЕС, который направлен на продвижение внутрирегиональной и международной торговли в пяти странах Центральной Азии - Казахстане, Кыргызстане, Таджикистане, Туркменистане и Узбекистане."
+
+[blogPosts newshome]
+pageNumber = "{{ :page }}"
+categoryFilter = "news"
+postsPerPage = 3
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "news"
+postPage = "news-vnutrennyaya-stranica"
+
+[blogPosts maif]
+pageNumber = "{{ :page }}"
+categoryFilter = "maw"
+postsPerPage = 6
+noPostsMessage = "Записей не найдено"
+sortOrder = "created_at asc"
+categoryPage = "about"
+postPage = "mawvnut"
+
+[blogPosts success]
+pageNumber = "{{ :page }}"
+categoryFilter = "success"
+postsPerPage = 10
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = 404
+==
+<div class="pad80">
+    <div class="container">
+        <div class="flexjust flexwrap flexcent flexreverse flexr4t">
+            <div class="r4tinfo wid55">
+                <h2 class="zaglov">{{ 'Ready4Trade Central Asia'|_ }}</h2>
+                <!--<span>{{ 'Supporting inclusive development through trade and digitalization.'|_ }}</span>-->
+                <span>{{ 'aims to support the development of intra-regional and international trade in five Central Asian countries by enhancing the transparency of cross-border requirements, removing regulatory and procedural barriers, strengthening business capability to comply with trade formalities and standards, as well as by improving cross-border e-commerce.'|_ }}</span>
+            </div>
+            <div class="r4timg wid40">
+                <img src="/storage/app/media/context.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pad80">
+    <div class="container">
+        <div class="flexjust flexwrap flexcountry">
+            <a class="countryblock Kazakhstan" href="/kazakhstan"><img src="/storage/app/media/newkaz.svg"><b>{{ 'Kazakhstan'|_ }}</b></a>
+            <a class="countryblock Kyrgyzstan" href="/kyrgyzstan"><img src="/storage/app/media/newkyr.svg"><b>{{ 'Kyrgyzstan'|_ }}</b></a>
+            <a class="countryblock Tajikistan" href="/tajikistan"><img src="/storage/app/media/newtaj.svg"><b>{{ 'Tajikistan'|_ }}</b></a>
+            <a class="countryblock Turkmenistan" href="/turkmenistan"><img src="/storage/app/media/newtur.svg"><b>{{ 'Turkmenistan'|_ }}</b></a>
+            <a class="countryblock Uzbekistan" href="/uzbekistan"><img src="/storage/app/media/newuzb.svg"><b>{{ 'Uzbekistan'|_ }}</b></a>
+        </div>
+    </div>
+</div>
+<div class="pad80">
+    <div class="container">
+        <h2 class="zaglov">{{ 'Main Areas of Work'|_ }}</h2>
+        {% component 'maif' %}
+    </div>
+</div>
+<div class="pad80">
+    <div class="container">
+        <h2 class="zaglov">{{ 'Latest News'|_ }}</h2>
+        {% component 'newshome' %}
+    </div>
+</div>
+<div class="pad80">
+    <div class="container">
+        <h2 class="zaglov">{{ 'Success Stories'|_ }}</h2>
+        {% component 'success' %}
+    </div>
+</div>
+</div>

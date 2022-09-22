@@ -1,0 +1,11 @@
+<td class="list-checkbox-show nolink">
+    <div class="checkbox custom-checkbox nolabel">
+        <input
+            type="checkbox"
+            name="checked[]"
+            id="<?= $this->getId('checkbox-show-' . $record->getKey()) ?>"
+            value="<?= $record->getKey() ?>"
+            autocomplete="off"/>
+        <label for="<?= $this->getId('checkbox-show-' . $record->getKey()) ?>"><?= e(trans('backend::lang.list.check')) ?></label>
+    </div>
+</td>

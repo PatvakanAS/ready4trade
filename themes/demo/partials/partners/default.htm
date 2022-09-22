@@ -1,0 +1,22 @@
+description = "Партнеры"
+==
+{% set posts = __SELF__.posts %}
+<div class="blognovostey">
+	{% for post in posts %}
+		<div class="blocknewsss flexjust flexwrap flexcent">
+	        {% for image in post.featured_images %}   
+	        <div class="imgbkognews">
+	            <img 
+	                data-src="{{ image.filename }}"
+	                src="{{ image.path }}"
+	                alt="{{ image.description }}"
+	                style="max-width: 100%" />
+            </div>
+	        {% endfor %}
+	        <div class="infobkognews">
+		         <a class="excerpt">{{ post.title|raw }}</a>
+		         {{ post.summary|raw }}
+	        </div>
+	    </div>
+	{% endfor %}
+</div>

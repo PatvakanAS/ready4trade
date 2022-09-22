@@ -1,0 +1,63 @@
+description = "Events"
+==
+<?php
+use RainLab\Blog\Models\Post as BlogPost;
+ 
+ 
+function onStart()
+{  
+    $now = date('Y-m-d H:i:s');
+	$this['posts'] = BlogPost::whereDate('published_off','>=', $now)->orderBy('published_off', 'desc')->get();   
+}
+?>
+==
+<div class="flexjust flexwrap flexupcom">
+	{% for post in posts %}
+	
+	
+    	{% if post.user.login==this.page.id %}
+    		<div class="infotabinfo {{ post.slug }}">
+    		    {% if(post.featured_images.count) %}
+    	        {% for image in post.featured_images %}   
+    	            <img 
+    	                data-src="{{ image.filename }}"
+    	                src="{{image.getThumb(845, 525, {'mode': 'crop', 'quality': 100, 'extension': 'jpg'}) }}"
+    	                alt="{{ image.description }}"
+    	                style="max-width: 100%" />
+                {% endfor %}
+    	        {% else %} 
+                    <img src="/storage/app/media/noimage.svg">
+                {% endif %}
+    	        <div class="itzaglov">
+                    <a class="itname">{{ post.title }}</a>
+		            <div class="itdescr">{{ post.summary|raw }}</div>
+    	        </div>
+    	    </div>
+    	{% endif %}
+	{% endfor %}
+	<div class="tabsup">
+    	{% for post in posts %}
+        	{% if post.user.login==this.page.id %}
+        		<div id="{{ post.slug }}" class="infotab flexjust flexcent">
+        	        <p class="dateit"><span>{{ post.published_at|date('d') }}</span> {{ post.published_at|date('M, Y') }}</p>
+        	        <div class="grayit">
+        	            <span>{% partial 'svg/time' %} {{ post.date2 }}</span>
+        	            <p>{{ post.zagolovok }}</p>
+        	        </div>
+        	    </div>
+        	{% endif %}
+    	{% endfor %}
+	</div>
+</div>
+<script>
+	{% for post in posts %}
+	{% if post.user.login==this.page.id %}
+    jQuery('#{{ post.slug }}').click(function () {jQuery('.infotabinfo').removeClass('actit');});
+    jQuery('#{{ post.slug }}').click(function () {jQuery('.{{ post.slug }}').addClass('actit');});
+    jQuery('#{{ post.slug }}').click(function () {jQuery('.infotab').removeClass('actittab');});
+    jQuery('#{{ post.slug }}').click(function () {jQuery('#{{ post.slug }}').addClass('actittab');});
+	{% endif %}
+	{% endfor %}
+	jQuery(document).ready(function () {jQuery('.infotabinfo:first').addClass('actit');});
+	jQuery(document).ready(function () {jQuery('.infotab:first').addClass('actittab');});
+</script>

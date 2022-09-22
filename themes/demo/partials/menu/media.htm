@@ -1,0 +1,9 @@
+description = "Menu Media"
+==
+<div class="menuvnut">
+     <li class="{% if this.page.id == 'news' %}active{% endif %}"><a href="{{ 'news'|page }}">{{ 'News'|_ }}</a></li>
+     <li class="{% if this.page.id == 'sucess-stories' %}active{% endif %}"><a href="{{ 'sucess-stories'|page }}">{{ 'Success stories'|_ }}</a></li>
+     <li class="{% if this.page.id == 'newsletters' %}active{% endif %}"><a href="{{ 'newsletters'|page }}">{{ 'Newsletters'|_ }}</a></li>
+     <li class="{% if this.page.id == 'inphographics' %}active{% endif %}"><a href="{{ 'inphographics'|page }}">{{ 'Infographics'|_ }}</a></li>
+     <li class="{% if this.page.id == 'videos' %}active{% endif %}"><a href="{{ 'videos'|page }}">{{ 'Videos'|_ }}</a></li>
+</div>

@@ -1,0 +1,41 @@
+title = "Infographics"
+url = "/infographics"
+layout = "vnut"
+meta_title = "Infographics"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "home"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[ru] = "Инфорграфика"
+localeMeta_title[ru] = "Инфорграфика"
+==
+<h2 class="zaglov bigzaglov">{{ 'Ready4Trade Infographics'|_ }}</h2>
+<!--<h1 class="zaglov bigzaglov"></h1>-->
+<div class="imgbanervnut"><img src="/storage/app/media/sunvyn.jpg"></div>
+{% partial 'menu/media' %}
+<div style="text-align:center;">
+    <h1 class="info_hedding">{{ 'Ready4Trade Central Asia Project in a nutshell.' |_}}</h1>
+    <h2 class="info_hedding">{{ 'Discover here the main working areas, key data and indicators.' |_}}</h2>
+    <div class="infoimg infoimg_custom_style"><a target="_blank" href="{{ 'https://prezi.com/i/view/Zrm0mxWDopHwwijHIWq2' |_ }}"><img src="{{ '/storage/app/media/info.png' |_ }}"></a></div>
+    <a href="{{ 'infographics_link'|_ }}" target="_blank" class="readmore" style="display:inline-flex">{{ 'project_owerview'|_ }}</a>
+</div>
+<div class="news">
+    <div class="pad80 news_content">
+        <div class="container">
+            <h2 class="info_footer_text">{{'Click and discover the Country Profiles ' |_ }}</h2>
+            <h3 class="info_footer_text">{{'Infographics here' |_ }}</h3>
+            <div class="flexjust flexwrap flexcountry">
+                <a class="countryblock Kazakhstan" target="_blank" href="{{ 'https://prezi.com/i/view/Var8el5LsfEDuKaWylcQ'|_ }}"><img src="/storage/app/media/newkaz.svg"><b>{{ 'Kazakhstan'|_ }}</b></a>
+                <a class="countryblock Kyrgyzstan" target="_blank" href="{{ 'https://prezi.com/i/view/1cjnPr0PT2bBnHl5ZH4L'|_ }}"><img src="/storage/app/media/newkyr.svg"><b>{{ 'Kyrgyzstan'|_ }}</b></a>
+                <a class="countryblock Tajikistan" target="_blank" href="{{ 'https://prezi.com/i/view/kq7wK41vtxHaIxz6qeyg'|_ }}"><img src="/storage/app/media/newtaj.svg"><b>{{ 'Tajikistan'|_ }}</b></a>
+                <a class="countryblock Turkmenistan" target="_blank" href="{{ 'https://prezi.com/i/view/lXuz2Ymo2UrBIqXgWIpC'|_ }}"><img src="/storage/app/media/newtur.svg"><b>{{ 'Turkmenistan'|_ }}</b></a>
+                <a class="countryblock Uzbekistan" target="_blank" href="{{ 'https://prezi.com/i/view/ztsOk9IOEU0hRC9WziWf'|_ }}"><img src="/storage/app/media/newuzb.svg"><b>{{ 'Uzbekistan'|_ }}</b></a>
+            </div>
+        </div>
+    </div>
+</div>

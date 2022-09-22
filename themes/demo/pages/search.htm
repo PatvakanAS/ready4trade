@@ -1,0 +1,40 @@
+title = "Search"
+url = "/search"
+layout = "vnut"
+meta_title = "Search"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "home"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeMeta_title[ru] = "Поиск"
+localeTitle[ru] = "Поиск"
+
+[searchResults]
+resultsPerPage = 10
+showProviderBadge = 1
+noResultsMessage = "Your search returned no results."
+visitPageMessage = "Visit page"
+
+[searchInput]
+useAutoComplete = 0
+autoCompleteResultCount = 5
+showProviderBadge = 1
+searchPage = "search.htm"
+==
+{% component 'searchInput' %}
+{% set results = searchResults.results %}
+
+{% for result in results %}
+    {# Display all results #}
+    {% partial searchResults ~ '::searchresult.htm' result = result %}
+{% else %}
+    {# No results found #}
+    {% partial searchResults ~ '::no-results.htm' %}
+{% endfor %}
+
+{% partial searchResults ~ '::pagination.htm' results = results %}

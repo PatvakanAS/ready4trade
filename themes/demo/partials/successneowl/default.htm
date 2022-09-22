@@ -1,0 +1,31 @@
+description = "Newletters Country"
+==
+{% set posts = __SELF__.posts %}
+<div class="nlcowl neowl owl-carousel">
+	{% for post in posts %}
+    	{% if post.user.login==this.page.id %}
+		<div class="item flexjust flexwrap flexcent">
+	        {% for image in post.featured_images %}   
+	            <img 
+	                data-src="{{ image.filename }}"
+	                src="{{image.getThumb(488, 496, {'mode': 'crop', 'quality': 100, 'extension': 'jpg'}) }}"
+	                alt="{{ image.description }}"
+	                style="max-width: 100%" />
+            {% endfor %}
+	        <div class="ssinfo">
+	            <div class="flexdis flexcent flexzagss">
+	                {% partial 'svg/kvach' %} <h2 class="zaglov">{{ post.title }}</h2>
+	            </div>
+                <div class="descrss">
+                    {{ post.summary|raw }}
+                </div>
+                <div class="ssname">
+                    <p>{{ post.ssname }}</p>
+                    <span>{{ post.sspole }}</span>
+                </div>
+				<a href='{{ url("/en/news/") }}/{{ post.slug }}' class="readmore littlerm">{{ 'read more'|_ }}</a>
+			</div>
+	    </div>
+	    {% endif %}
+	{% endfor %}
+</div>

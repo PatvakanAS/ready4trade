@@ -1,0 +1,36 @@
+title = "Newsletters"
+url = "/newsletters/:category?/:page?"
+layout = "vnut"
+meta_title = "Ready4Trade newsletters"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "home"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[ru] = "Информационные рассылки"
+localeMeta_title[ru] = "Информационные рассылки Ready4Trade"
+
+[searchInput]
+useAutoComplete = 0
+autoCompleteResultCount = 10
+showProviderBadge = 1
+searchPage = "search.htm"
+
+[blogPosts newslet]
+pageNumber = "{{ :page }}"
+categoryFilter = "newsletter"
+postsPerPage = 50
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "newsletters"
+postPage = "newsletters-vnutrennyaya-stranica"
+==
+<h2 class="zaglov bigzaglov">{{ 'Ready4Trade Newsletters'|_ }}</h2>
+<div class="imgbanervnut"><img src="/storage/app/media/sunvyn.jpg"></div>
+{% partial 'menu/media' %}
+<!--{% component 'searchInput' %}-->
+{% component 'newslet' %}

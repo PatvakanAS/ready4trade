@@ -1,0 +1,32 @@
+==
+{% set posts = __SELF__.posts %}
+<div class="neowl news">
+	<ul  class="pagination_block">
+
+	{% for post in posts %}
+	<div class="item newsblock flexjust flexwrap flexcent" data-id="{{post.user_id}}" data-keywords="{{post.mwa}}">
+	        {% for image in post.featured_images %}
+	            <img
+	                data-src="{{ image.filename }}"
+	                src="{{image.getThumb(488, 496, {'mode': 'crop', 'quality': 100, 'extension': 'jpg'}) }}"
+	                alt="{{ image.description }}"
+	                style="max-width: 100%" />
+            {% endfor %}
+	        <div class="ssinfo">
+	            <div class="flexdis flexcent flexzagss">
+	                {% partial 'svg/kvach' %} <div class="zaglov">{{ post.title }}</div>
+					<div class="newsattr"><span class="country ss_country">{{ post.user.login|_ }}</span></div>
+	            </div>
+                <div class="descrss">
+                    {{ post.summary|raw }}
+                </div>
+                <div class="ssname">
+                    <p>{{ post.ssname }}</p>
+                    <span>{{ post.sspole }}</span>
+                </div>
+				<a href='{{ url("/en/news/") }}/{{ post.slug }}' class="readmore littlerm">{{ 'Read more'|_ }}</a>
+			</div>
+	    </div>
+	{% endfor %}
+	</ul>
+</div>
